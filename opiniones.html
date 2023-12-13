@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="opiniones.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <h1>Skin Glow</h1>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="principalll.html">Inicio</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="opiniones.html">Opiniones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <header>
+        <div class="container">
+          <div class="container__left">
+            <h1>Lo que nuestros clientes aman de nosotros</h1>
+            <p>
+              Nuestros clientes adoran los resultados tangibles que experimentan con nuestros productos. Una piel más radiante, suave y saludable es una razón principal por la cual nos prefieren.
+            </p>
+            <p>
+              ¡Descubre lo que nuestros clientes dicen sobre la experiencia SkinGlow! En esta sección, damos voz a la satisfacción de nuestros clientes, quienes comparten sus vivencias y resultados utilizando nuestros productos de cuidado de la piel. 
+              Explora testimonios auténticos que destacan 
+              la eficacia, la calidad y la sensación única que brindan nuestros productos. Únete a la comunidad SkinGlow y descubre cómo estamos elevando la rutina de cuidado de la piel para cada tipo de piel, un comentario a la vez.
+            </p>
+          </div>
+          <div class="container__right">
+            <div class="card">
+              <div class="card__content">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <div class="card__details">
+                  <p>
+                    ¡Increíble descubrimiento! Los productos de esta página realmente transformaron mi piel. La textura suave y los resultados visibles me tienen enganchada. ¡Altamente recomendado!
+                  </p>
+                  <h4>- Marnus Stephen</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__content">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <div class="card__details">
+                  <p>
+                    Nunca fui de usar muchos productos, pero esta página cambió mi perspectiva. La rutina de cuidado de la piel que me recomendaron es fácil de seguir y los resultados son notables. ¡Me siento más fresco y confiado!
+                  </p>
+                  <h4>- Andrew Jettpace</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__content">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <div class="card__details">
+                  <p>
+                    Nunca fui de usar muchos productos, pero esta página cambió mi perspectiva. La rutina de cuidado de la piel que me recomendaron es fácil de seguir y los resultados son notables. ¡Me siento más fresco y confiado!
+                  </p>
+                  <h4>- Stacy Stone</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <footer>
+        <span>|Natalia Romero| 2023</span>
+    </footer>
+</body>
+<script>
+  var navlinks = document.getElementById("navlinks");
+  function showMenu(){
+      navlinks.style.right = "0";
+  }
+  function hideMenu(){
+      navlinks.style.right = "-200px";
+  }
+  $(document).ready(function () {
+      var productosSection = $(".productos");
+
+      $(window).scroll(function () {
+          // Calcula la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+          var productosOffset = productosSection.offset().top;
+
+          // Verifica si el desplazamiento vertical es mayor o igual a la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+          if ($(window).scrollTop() >= productosOffset) {
+              // Agrega una clase para fijar la posición
+              productosSection.addClass("fixed");
+          } else {
+              // Quita la clase para restaurar la posición normal
+              productosSection.removeClass("fixed");
+          }
+      });
+  });
+</script>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- box icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200&family=Roboto+Serif:ital,opsz,wght@1,8..144,100&family=Roboto:ital,wght@0,100;1,100;1,400&display=swap" rel="stylesheet">
+    <!-- styles  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="acercade.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HEADER  -->
+    <header>
+        <!-- NAV  -->
+        <div class="nav container">
+            <a href="principalll.html" class="logo">Skin Glow</a>
+            <!-- CART ICON  -->
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+
+            <!-- CART  -->
+            <div class="cart">
+                <h2 class="cart-title">Carrito</h2>
+
+                <!-- CONTENT  -->
+                <div class="cart-content">
+
+
+                </div>
+
+                <!-- TOTAL   -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <!-- BUY BUTTON  -->
+                <button type="button" class="btn-buy">Compra ya</button>
+                <!-- CART CLOSE  -->
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SHOP SECTION  -->
+    <section class="shop container">
+        <h2 class="section-title">Comprar ahora</h2>
+
+        <!-- CONTENT  -->
+        <div class="shop-content">
+            <!-- BOX 1 -->
+            <div class="product-box">
+                <img src="skincare1.1-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Serum Duo</h2>
+                <span class="product-price">$79.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 2 -->
+            <div class="product-box">
+                <img src="skincare1.2-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Serum Hidratante</h2>
+                <span class="product-price">$59.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 3 -->
+            <div class="product-box">
+                <img src="skincare1.3-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Crema Hidratante</h2>
+                <span class="product-price">$29.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 4 -->
+            <div class="product-box">
+                <img src="pexels-jana-kukebal-6689393-removebg-preview (1).png" alt="" class="product-img">
+                <h2 class="product-title">Crema Hidratante</h2>
+                <span class="product-price">$105</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 5 -->
+            <div class="product-box">
+                <img src="pexels-mearlywan-14473396-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Spray Limpiador</h2>
+                <span class="product-price">$95</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 6 -->
+            <div class="product-box">
+                <img src="pexels-misolo-cosmetic-6767773-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Serum VC</h2>
+                <span class="product-price">$14</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 7 -->
+            <div class="product-box">
+                <img src="pexels-ron-lach-8131581-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Serum Bifasico</h2>
+                <span class="product-price">$17</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 8 -->
+            <div class="product-box">
+                <img src="pexels-ron-lach-8140916-removebg-preview.png" alt="" class="product-img">
+                <h2 class="product-title">Serum de arroz</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <span>|Natalia Romero| 2023</span>
+    </footer>
+
+    <!-- link js  -->
+    <script src="main.js"></script>
+    <script>
+        var navlinks = document.getElementById("navlinks");
+    function showMenu(){
+        navlinks.style.right = "0";
+    }
+    function hideMenu(){
+        navlinks.style.right = "-200px";
+    }
+    $(document).ready(function () {
+        var productosSection = $(".productos");
+
+        $(window).scroll(function () {
+            // Calcula la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+            var productosOffset = productosSection.offset().top;
+
+            // Verifica si el desplazamiento vertical es mayor o igual a la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+            if ($(window).scrollTop() >= productosOffset) {
+                // Agrega una clase para fijar la posición
+                productosSection.addClass("fixed");
+            } else {
+                // Quita la clase para restaurar la posición normal
+                productosSection.removeClass("fixed");
+            }
+        });
+    });
+    </script>
+</body>
+</html>

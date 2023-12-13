@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="acercade.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200&family=Roboto+Serif:ital,opsz,wght@1,8..144,100&family=Roboto:ital,wght@0,100;1,100;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <h1>Skin Care</h1>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="opiniones.html">Opiniones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <script>
+        var navlinks = document.getElementById("navlinks");
+        function showMenu(){
+            navlinks.style.right = "0";
+        }
+        function hideMenu(){
+            navlinks.style.right = "-200px";
+        }
+        $(document).ready(function () {
+            var productosSection = $(".productos");
+    
+            $(window).scroll(function () {
+                // Calcula la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+                var productosOffset = productosSection.offset().top;
+    
+                // Verifica si el desplazamiento vertical es mayor o igual a la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+                if ($(window).scrollTop() >= productosOffset) {
+                    // Agrega una clase para fijar la posición
+                    productosSection.addClass("fixed");
+                } else {
+                    // Quita la clase para restaurar la posición normal
+                    productosSection.removeClass("fixed");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

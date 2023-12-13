@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="usuarios.css">
+    <title>Document</title>
+</head>
+<h1>Registro de Usuarios</h1>
+
+    <form id="registroForm">
+        <input type="text" id="nuevoUsuario" placeholder="Nuevo nombre de usuario">
+        <input type="password" id="nuevaContraseña" placeholder="Nueva contraseña">
+        <button type="button" onclick="registrarUsuario()">Registrar Usuario</button>
+        <button type="button" onclick="irAOtraPagina()" id="otraPaginaBoton">Registar Producto</button>
+    </form>
+
+    <h2>Lista de Usuarios Registrados</h2>
+    <table id="usuariosTable" border="1">
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Contraseña</th>
+            </tr>
+        </thead>
+        <tbody id="usuariosTablaBody">
+            <!-- Aquí se mostrarán los usuarios registrados -->
+        </tbody>
+    </table>
+
+    <script src="usuarios.js"></script>
+</body>
+</html>

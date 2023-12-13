@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="princioalll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200&family=Roboto+Serif:ital,opsz,wght@1,8..144,100&family=Roboto:ital,wght@0,100;1,100;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <h1>Skin Glow</h1>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="opiniones.html">Opiniones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="principal.html">ADM</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        
+        <div class="text-box">
+            <h1>El cuiado natural para tu piel</h1>
+            <p>
+                Entendemos que la belleza es más que piel profunda; es un reflejo de cómo te sientes por dentro. <br> compromiso es ayudarte a descubrir la mejor versión de ti misma a través del cuidado de la piel.
+            </p>
+            <a href="#" class="masbtn">Visitanos para saber más</a>
+        </div>
+    </section>
+
+    <section class="productos">
+        <h1>Productos que ofrecemos</h1>
+        <p>SkinGlow, la innovadora empresa de cuidado de la piel, se enorgullece de ofrecer una exclusiva gama de productos 
+            diseñados para realzar la belleza natural y fomentar una piel radiante y saludable. Cada producto de SkinGlow se distingue 
+            por su compromiso con ingredientes naturales y fórmulas cuidadosamente desarrolladas, creadas con la atención y la experiencia de nuestros especialistas en cuidado de la piel.</p>
+        <div class="row">
+            <div class="product-col">
+                <h3>Luminosidad Renovada:</h3>
+                <p>Los productos de SkinGlow, enriquecidos con potentes antioxidantes y ingredientes naturales, trabajan en sinergia para revitalizar la piel, 
+                    proporcionando una luminosidad renovada. Los clientes experimentan una tez más radiante y saludable, 
+                    gracias a fórmulas diseñadas para resaltar la belleza natural.
+                </p>
+            </div>
+            <div class="product-col">
+                <h3>Hidratación Profunda y Duradera:</h3>
+                <p>La gama de productos de SkinGlow, especialmente la crema hidratante "Hydra Bliss" y el aceite facial "Golden Elixir," 
+                    ofrece una hidratación intensa y duradera. Estas fórmulas avanzadas nutren la piel en profundidad, dejándola suave, 
+                    flexible y revitalizada.
+                </p>
+            </div>
+            <div class="product-col">
+                <h3>Efectividad Natural y Delicada:</h3>
+                <p>Los productos de SkinGlow se distinguen por su compromiso con ingredientes naturales y fórmulas cuidadosamente desarrolladas. 
+                    Esto asegura que los clientes disfruten de resultados efectivos sin comprometer la suavidad y la delicadeza en el cuidado de la piel, 
+                    adecuados para diversos tipos de piel, incluso las más sensibles.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="producto" id="producto">
+        <div class="cabeza">
+            <span>Productos</span>
+            <h2>Al mejor precio</h2>
+        </div>
+        <div class="contenedorproductos">
+            <div class="caja">
+                <div class="caja-img">
+                    <img src="skincare1.1-removebg-preview.png">
+                    <h2>Serum Hidratante Dúo</h2>
+                    <h3>Hidratación total</h3>
+                    <span>$79.5</span>
+                </div>
+            </div>
+            <div class="caja">
+                <div class="caja-img">
+                    <img src="skincare1.2-removebg-preview.png">
+                    <h2>Serum Hidratante</h2>
+                    <h3>Hidratación total</h3>
+                    <span>$59.5</span>
+                </div>
+            </div>
+            <div class="caja">
+                <div class="caja-img">
+                    <img src="skincare1.3-removebg-preview.png">
+                    <h2>crema Hidratante</h2>
+                    <h3>Hidratación total</h3>
+                    <span style="text-align: center;">$29.5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span>|Natalia Romero| 2023</span>
+    </footer>
+</body>
+<script>
+    var navlinks = document.getElementById("navlinks");
+    function showMenu(){
+        navlinks.style.right = "0";
+    }
+    function hideMenu(){
+        navlinks.style.right = "-200px";
+    }
+    $(document).ready(function () {
+        var productosSection = $(".productos");
+
+        $(window).scroll(function () {
+            // Calcula la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+            var productosOffset = productosSection.offset().top;
+
+            // Verifica si el desplazamiento vertical es mayor o igual a la distancia desde la parte superior de la página hasta la parte superior de la sección de productos
+            if ($(window).scrollTop() >= productosOffset) {
+                // Agrega una clase para fijar la posición
+                productosSection.addClass("fixed");
+            } else {
+                // Quita la clase para restaurar la posición normal
+                productosSection.removeClass("fixed");
+            }
+        });
+    });
+</script>
+</html>
